@@ -11,12 +11,12 @@ def douban():
     #GET请求
     r = requests.get('http://movie.douban.com/nowplaying/beijing/')
     #把网页内容实例化BeautifulSoup当中
-    movie_list = BeautifulSoup(''.join(r.text))
+    nowplaying = BeautifulSoup(''.join(r.text))
     #提取所有电影名称
-    #print soup.findAll("span", { "class" : "ll" })
+    #print movie_list.findAll("span", { "class" : "ll" })
     #从列表中取出来 a 锚点的每个电影名称, 去掉空格和换行(回车)
-    for movie in movie_list.findAll("span", { "class" : "ll" }):
-        print ''.join(movie.findAll(text=True)).replace(' ', '').replace('\n', '')
+    for movie in nowplaying.findAll("span", { "class" : "ll" }):
+        print ''.join(movie.findAll(text=True)).replace(' ', '').replace('\n', '').encode('utf-8')
 
 if __name__ == '__main__':
     douban()

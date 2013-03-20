@@ -12,7 +12,7 @@ def douban():
     #获得 HTTP 状态码
     print r.status_code
     #获得 HTML 文本
-    print r.text
+    print r.text.encode('utf-8')
 
 if __name__ == '__main__':
     douban()

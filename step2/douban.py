@@ -13,9 +13,9 @@ def douban():
     #获得 HTTP 状态码
     print r.status_code
     #把网页内容实例化BeautifulSoup当中
-    html = BeautifulSoup(''.join(r.text))
+    nowplaying = BeautifulSoup(''.join(r.text))
     #提取 网页标题
-    print html.html.head.title.string
+    print nowplaying.html.head.title.string.encode('utf-8')
 
 if __name__ == '__main__':
     douban()
