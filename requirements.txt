@@ -1,0 +1,3 @@
+BeautifulSoup==3.2.1
+SQLAlchemy==0.8.0
+requests==1.1.0
